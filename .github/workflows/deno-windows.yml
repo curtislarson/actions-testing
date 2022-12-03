@@ -1,0 +1,19 @@
+name: Deno Windows
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  deno-windows:
+    name: Deno Windows Job
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v1
+
+      - name: Run Test Task
+        run: |
+          deno task windows-test
